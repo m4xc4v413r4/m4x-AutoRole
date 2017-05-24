@@ -1,0 +1,8 @@
+## Interface: 70200
+## Title: m4x AutoRole
+## Notes: Selects your Role depending on your Spec
+## Author: m4xc4v413r4
+## Version: @project-version@
+## SavedVariables: 
+
+m4x-AutoRole.lua
