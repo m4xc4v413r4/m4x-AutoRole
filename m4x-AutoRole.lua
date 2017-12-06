@@ -3,8 +3,6 @@ local frame = CreateFrame("Frame", "m4xRoleFrame", UIParent)
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 local function GetValues()
-	frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
-
 	local spec = GetSpecialization()
 	local role = GetSpecializationRole(spec)
 
@@ -12,7 +10,7 @@ local function GetValues()
 		SetLFGRoles(false,true,false,false)
 	elseif role == "HEALER" then
 		SetLFGRoles(false,false,true,false)
-	else
+	elseif role == "DAMAGER" then
 		SetLFGRoles(false,false,false,true)
 	end
 end
@@ -20,6 +18,8 @@ end
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		C_Timer.After(10, GetValues)
+		frame:UnregisterEvent("PLAYER_ENTERING_WORLD")
+		frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 	else
 		GetValues()
 	end

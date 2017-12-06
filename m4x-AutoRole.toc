@@ -1,6 +1,6 @@
-## Interface: 70200
+## Interface: 70300
 ## Title: m4x AutoRole
-## Notes: Selects your Role depending on your Spec
+## Notes: Selects your LFG Role depending on your Spec
 ## Author: m4xc4v413r4
 ## Version: @project-version@
 
